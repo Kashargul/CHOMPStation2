@@ -442,10 +442,10 @@
 	else if(istype(target, /obj/item/device/mmi))
 		var/obj/item/device/mmi/mm = target
 		if(!mm.brainmob || !mm.brainmob.mind)
-			if(M.mind == own_mind)
-				own_mind = null
 			to_chat(owner, span_notice("You transfer the soul into the [target]!"))
 			to_chat(M, span_notice("[transfer_message]"))
+			if(M.mind == own_mind)
+				own_mind = null
 			mm.transfer_identity(M)
 			if(!mm.brainmob.mind && M.mind)
 				M.mind.transfer_to(mm.brainmob)
