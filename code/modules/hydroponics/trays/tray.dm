@@ -136,11 +136,9 @@
 		REAGENT_ID_MUTAGEN = 15
 		)
 
-	//CHOMPedit: Reagents which double plant growth speed.
 	var/static/list/age_reagents = list(
 	REAGENT_ID_PITCHERNECTAR =  1
 	)
-	//CHOMPedit end
 
 /obj/machinery/portable_atmospherics/hydroponics/AltClick(var/mob/living/user)
 	if(!istype(user))
@@ -317,10 +315,8 @@
 			else if(toxic_reagents[R.id])
 				toxins += toxic_reagents[R.id] * reagent_total
 
-			//CHOMPedit: Agents which speed up plant growth
 			if(age_reagents[R.id])
 				age_mod += age_reagents[R.id]  * reagent_total
-			//CHOMPedit end
 
 		//Handle some general level adjustments. These values are independent of plants existing.
 		if(weedkiller_reagents[R.id])
